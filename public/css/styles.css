@@ -1,0 +1,84 @@
+.navbar-size {
+    width: 95%;
+    margin: 0 auto;
+}
+
+.header-description {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+    font-weight: bold;
+}
+
+h3 {
+    color: #333;
+    font-size: 28px;
+    margin-bottom: 10px;
+    font-weight: bolder;
+    font-style: oblique;
+}
+
+p {
+    color: #666;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.user-image-size {
+    height: 56px;
+    margin: 4px 0;
+}
+
+.social-icons-container {
+    display: flex;
+    /* Use flexbox to align items */
+    align-items: center;
+    /* Align items vertically */
+}
+
+.social-icon-linkedin {
+    width: 52px;
+    /* Set the width to match the GitHub image */
+    height: auto;
+    /* Allow height to adjust proportionally */
+    margin: 5px 2px;
+}
+
+.social-icon-github {
+    width: 38px;
+    height: auto;
+    margin: 5px 2px;
+}
+
+.social-icon-linkedin:hover,
+.social-icon-github:hover {
+    filter: brightness(0.8);
+}
+
+.main-body {
+    background-color: #00bbff;
+    color: white;
+    height: calc(100vh - 64px);
+}
+
+.materialboxed-image {
+    margin: 0 auto;
+    height: 400px;
+    display: block;
+}
+
+.click-me-button {
+    background-color: #f41789;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.click-me-button:hover {
+    background-color: #04db56;
+}
+
+input,
+p {
+    color: black;
+}

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIT 725 Prac 3</title>
+    <meta name="author" content="Joe">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body class="main-body">
+    <!-- Navigation bar -->
+    <nav class="blue">
+        <div class="nav-wrapper navbar-size">
+            <a href="#" class="brand-logo">
+                <img class="user-image-size" alt="Profile" src="images/profile.png" />
+            </a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li>
+                    <div class="social-icons-container">
+                        <img src="images/linkedIn.png" class="social-icon-linkedin" alt="LinkedIn" target="_blank"
+                            href="https://www.linkedin.com/in/nerrorsec/" />
+                        <img src="images/github.png" class="social-icon-github" alt="Github" target="_blank"
+                            href="https://www.github.com/nirajunib/" />
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="header-description">
+        <h3>LuxCars</h3>
+        <p>Welcome to LuxCars.</p>
+        <p>Your one-stop destination to buying Luxury sports cars.</p>
+    </div>
+
+    <div class="container">
+        <!-- Image -->
+        <img class="materialboxed-image" src="images/demo.png" alt="live demo">
+        <!-- Button -->
+        <div class="center-align">
+            <a class="waves-effect waves-light btn modal-trigger click-me-button" href="#modal1"><i
+                    class="material-icons left">auto_fix_high</i>Get a Test Ride!</a>
+        </div>
+        <!-- Card boxes -->
+        <div class="row" id="card-section"></div>
+    </div>
+
+    <!-- Modal Structure -->
+    <div id="modal1" class="modal modal-fixed-footer">
+        <div class="row modal-content">
+            <form class="col s12">
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input id="first_name" type="text" class="validate" required="tr">
+                        <label for="first_name">First Name</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <input id="last_name" type="text" class="validate">
+                        <label for="last_name">Last Name</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="password" type="password" class="validate" autocomplete="current-password" required>
+                        <label for="password">Password</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="email" type="email" class="validate" required>
+                        <label for="email">Email</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12 center-align">
+                        <a class="waves-effect waves-light btn" id="formSubmit">Submit</a>
+                    </div>
+                    <center>
+                        <div id="message"></div>
+                    </center>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
