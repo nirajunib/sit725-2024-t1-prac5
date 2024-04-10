@@ -1,23 +1,16 @@
-const cardList = [
-    {
-        title: "Nissan GT-R",
-        image: "images/nissan.jpg",
-        link: "About GT-R",
-        description: "Demo description about Nissan GT-R"
-    },
-    {
-        title: "Dogde Hellcat",
-        image: "images/dodge.jpg",
-        link: "About Hellcat",
-        description: "Demo description about Dogde Hellcat"
-    },
-    {
-        title: "Jaquar F-Type",
-        image: "images/jaquar.jpg",
-        link: "About F-Type",
-        description: "Demo description about Jaquar F-Type"
+const fetchCars = async () => {
+    try {
+        const response = await fetch('/cars');
+        if (!response.ok) {
+            throw new Error('Failed to fetch car data');
+        }
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error('Error fetching car data:', error);
+        throw error;
     }
-]
+}
 
 // Send form data to backend server
 const submitForm = () => {
@@ -69,22 +62,36 @@ const submitForm = () => {
 
 const addCards = (items) => {
     items.forEach(item => {
-        let itemToAppend = '<div class="col s4 center-align">' +
-            '<div class="card medium"><div class="card-image waves-effect waves-block waves-light"><img class="activator" src="' + item.image + '">' +
-            '</div><div class="card-content">' +
-            '<span class="card-title activator grey-text text-darken-4">' + item.title + '<i class="material-icons right">more_vert</i></span><p><a href="#">' + item.link + '</a></p></div>' +
-            '<div class="card-reveal">' +
-            '<span class="card-title grey-text text-darken-4">' + item.title + '<i class="material-icons right">close</i></span>' +
-            '<p class="card-text">' + item.description + '</p>' +
-            '</div></div></div>';
-        $("#card-section").append(itemToAppend)
+        let itemToAppend = `
+            <div class="col s4 center-align">
+                <div class="card medium">
+                    <div class="card-image waves-effect waves-block waves-light">
+                        <img class="activator" src="${item.image}">
+                    </div>
+                    <div class="card-content">
+                        <span class="card-title activator grey-text text-darken-4">${item.title}<i class="material-icons right">more_vert</i></span>
+                        <p><a href="#">${item.link}</a></p>
+                    </div>
+                    <div class="card-reveal">
+                        <span class="card-title grey-text text-darken-4">${item.title}<i class="material-icons right">close</i></span>
+                        <p class="card-text">${item.description}</p>
+                    </div>
+                </div>
+            </div>`;
+        $("#card-section").append(itemToAppend);
     });
 }
-$(document).ready(function () {
+$(document).ready(async function () {
     $('.materialboxed-image').materialbox();
-    addCards(cardList);
+
+    try {
+        const cars = await fetchCars();
+        addCards(cars);
+    } catch (error) {
+        console.error('Error loading car data:', error);
+    }
     $('#formSubmit').click(() => {
         submitForm();
-    })
+    });
     $('.modal').modal();
 });
